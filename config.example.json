@@ -1,0 +1,105 @@
+{
+  "_comment": "~/.config/frame-gaze-gestures/config.json の中身のサンプル。書かなかった項目は既定値になります",
+  "source": "status",
+  "status_path": null,
+  "osc_listen_port": 9100,
+  "osc_prefix": "/FT",
+  "host": "auto",
+  "port": 9000,
+  "thresholds": {
+    "lid_closed_below": 0.2,
+    "lid_open_above": 0.45,
+    "long_blink_min_s": 0.5,
+    "long_blink_max_s": 2.0,
+    "double_window_s": 2.5,
+    "wink_min_s": 0.4,
+    "wink_max_s": 2.0,
+    "look_threshold": 0.55,
+    "look_hysteresis": 0.15,
+    "look_hold_s": 1.0,
+    "cooldown_s": 2.0,
+    "max_gap_s": 0.5
+  },
+  "gestures": {
+    "double_long_blink": {
+      "enabled": true,
+      "actions": [
+        {
+          "type": "osc_toggle",
+          "address": "/avatar/parameters/GazeToggle"
+        }
+      ]
+    },
+    "long_blink": {
+      "enabled": false,
+      "actions": [
+        {
+          "type": "osc_pulse",
+          "address": "/avatar/parameters/GazeLongBlink",
+          "seconds": 0.5
+        }
+      ]
+    },
+    "wink_left": {
+      "enabled": true,
+      "actions": [
+        {
+          "type": "osc_pulse",
+          "address": "/avatar/parameters/GazeWinkLeft",
+          "seconds": 0.5
+        }
+      ]
+    },
+    "wink_right": {
+      "enabled": true,
+      "actions": [
+        {
+          "type": "osc_pulse",
+          "address": "/avatar/parameters/GazeWinkRight",
+          "seconds": 0.5
+        }
+      ]
+    },
+    "look_up": {
+      "enabled": true,
+      "actions": [
+        {
+          "type": "osc_pulse",
+          "address": "/avatar/parameters/GazeLookUp",
+          "seconds": 0.5
+        }
+      ]
+    },
+    "look_down": {
+      "enabled": false,
+      "actions": [
+        {
+          "type": "osc_pulse",
+          "address": "/avatar/parameters/GazeLookDown",
+          "seconds": 0.5
+        }
+      ]
+    },
+    "look_left": {
+      "enabled": false,
+      "actions": [
+        {
+          "type": "osc_pulse",
+          "address": "/avatar/parameters/GazeLookLeft",
+          "seconds": 0.5
+        }
+      ]
+    },
+    "look_right": {
+      "enabled": false,
+      "actions": [
+        {
+          "type": "osc_pulse",
+          "address": "/avatar/parameters/GazeLookRight",
+          "seconds": 0.5
+        }
+      ]
+    }
+  },
+  "log_every_s": 60.0
+}
